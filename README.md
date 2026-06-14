@@ -1,15 +1,15 @@
-# Contribution [#]: [Issue Title]
+# Contribution 1: [Issue Title]
 
-**Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Contribution Number:** 1
+**Student:** Valerie Kwan  
+**Issue:** [[GitHub issue link] ](https://github.com/esbmc/esbmc/issues/746) 
+**Status:** Phase II In Progress
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose this issue because I wanted to learn more about what esbmc does in a manner that doesn't require me to understand any of the functionality. The issue talks about clang, which is a tool I have used previously, so I believe that I understand what they are asking for.
 
 ---
 
@@ -17,7 +17,7 @@
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+The commenter asks for enabling color dumps in the frontend. 
 
 ### Expected Behavior
 
@@ -29,7 +29,7 @@
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+The frontend portion
 
 ---
 
