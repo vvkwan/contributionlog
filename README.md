@@ -9,7 +9,7 @@
 
 ## Why I Chose This Issue
 
-I chose this issue because I wanted to learn more about what esbmc does in a manner that doesn't require me to understand any of the functionality. The issue talks about clang, which is a tool I have used previously, so I believe that I understand what they are asking for.
+I chose this issue because I wanted to learn more about what ESBMC does in a manner that doesn't require me to understand any of the functionality. The issue talks about clang, which is a tool I have used previously, so I believe that I understand what they are asking for.
 
 ---
 
@@ -17,15 +17,15 @@ I chose this issue because I wanted to learn more about what esbmc does in a man
 
 ### Problem Description
 
-The commenter asks for enabling color dumps in the frontend. 
+The commenter asks for enabling color dumps in ESBMC's Clang frontend. ESBMC uses clang to print out errors, but currently, the errors are printed out in black and white.
 
 ### Expected Behavior
 
-[What should happen?]
+ESBMC should print out errors in color.
 
 ### Current Behavior
 
-[What actually happens?]
+ESBMC errors are currently in black and white.
 
 ### Affected Components
 
