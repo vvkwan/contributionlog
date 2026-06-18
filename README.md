@@ -37,13 +37,11 @@ The frontend portion
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+n/a
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+n/a not a bug
 
 ### Reproduction Evidence
 
@@ -57,7 +55,7 @@ The frontend portion
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+The issue already talks about it, but instead of using purely dump(), the solution should use setShowColors() to enable colors.
 
 ### Proposed Solution
 
