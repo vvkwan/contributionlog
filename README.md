@@ -3,7 +3,7 @@
 **Contribution Number:** 1
 **Student:** Valerie Kwan  
 **Issue:** [[GitHub issue link] ](https://github.com/esbmc/esbmc/issues/746) 
-**Status:** Phase II In Progress
+**Status:** Phase III In Progress
 
 ---
 
@@ -47,7 +47,7 @@ n/a not a bug
 
 - **Commit showing reproduction:** [Link to commit in your fork]
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** For Phase 2, I was going through some of the content in the coursework linked in the ESBMC repo to familiarize myself with the purpose of the project. ([[Link]](https://ssvlab.github.io/lucasccordeiro/courses/2022/01/software-security/index.html))
 
 ---
 
