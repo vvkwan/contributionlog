@@ -3,7 +3,7 @@
 **Contribution Number:** 1
 **Student:** Valerie Kwan  
 **Issue:** [[GitHub issue link] ](https://github.com/esbmc/esbmc/issues/746) 
-**Status:** Phase III In Progress
+**Status:** Phase IV In Progress
 
 ---
 
@@ -65,9 +65,9 @@ The issue already talks about it, but instead of using purely dump(), the soluti
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** The DiagnosticEngine in clang isn't automatically configured with color enabled, so I need to use setShowColor(true) to enable it.
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** I checked where the code uses dump() and traced where the DiagnosticEngine is being made in those cases to enable color.
 
 **Plan:** [Step-by-step implementation plan]
 1. [Modify file X to do Y]
@@ -78,7 +78,7 @@ Using UMPIRE framework (adapted):
 
 **Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** I will trigger an error in esbmc to see if it dumps in color.
 
 ---
 
@@ -86,7 +86,7 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 
-- [ ] Test case 1: [Description]
+- [ ] Test case 1: Trigger an error in esbmc.
 - [ ] Test case 2: [Description]
 - [ ] Test case 3: [Description]
 
