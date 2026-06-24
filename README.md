@@ -3,7 +3,7 @@
 **Contribution Number:** 1
 **Student:** Valerie Kwan  
 **Issue:** [[GitHub issue link] ](https://github.com/esbmc/esbmc/issues/746) 
-**Status:** Phase IV In Progress
+**Status:** Phase III In Progress
 
 ---
 
@@ -67,7 +67,7 @@ Using UMPIRE framework (adapted):
 
 **Understand:** The DiagnosticEngine in clang isn't automatically configured with color enabled, so I need to use setShowColor(true) to enable it.
 
-**Match:** I checked where the code uses dump() and traced where the DiagnosticEngine is being made in those cases to enable color.
+**Match:** I checked where the code uses dump() and traced where the DiagnosticEngine is being made in those cases to enable color. I am currently in the midst of building the project.
 
 **Plan:** [Step-by-step implementation plan]
 1. [Modify file X to do Y]
