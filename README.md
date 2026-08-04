@@ -78,7 +78,7 @@ Using UMPIRE framework (adapted):
 
 **Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
 
-**Evaluate:** I will trigger an error in esbmc to see if it dumps in color.
+**Evaluate:** I will trigger an error in esbmc to see if it dumps in color; I've realized that esbmc seems to already dump in color and I'm not really sure what the issue has been.
 
 ---
 
