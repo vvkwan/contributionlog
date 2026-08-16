@@ -3,7 +3,7 @@
 **Contribution Number:** 1
 **Student:** Valerie Kwan  
 **Issue:** [[GitHub issue link] ](https://github.com/esbmc/esbmc/issues/746) 
-**Status:** Phase III In Progress
+**Status:** --scrapped-- I found that this issue wasn't an applicable issue
 
 ---
 
