@@ -1,4 +1,4 @@
-# Contribution 1: Migrate math/base/special packages from relative tolerance testing to ULP difference testing
+# Contribution 1: Migrate `math/base/special` packages from relative tolerance testing to ULP difference testing
 
 **Contribution Number:** 1 
 **Student:** Valerie Kwan 
@@ -179,10 +179,9 @@ I consulted AI to understand the codebase, specifically the purpose and migratio
 @stdlib-js/reviewers
 
 **Maintainer Feedback:**
-- [Date]: [Summary of feedback received]
-- [Date]: [How you addressed it]
+- [8/17/26]: I got a review:5, which seems to mean the reviewer was satisfied with the changes made and that I followed the CONTRIBUTING.md.
 
-**Status:** [Awaiting review]
+**Status:** [Merged]
 
 ---
 
@@ -194,11 +193,11 @@ I learned about testing and the different considerations people have to make whe
 
 ### Challenges Overcome
 
-I wrote about this in my approach section, but I thought this was going to be an extremely straightforward migration, but I had to take into consideration.
+I wrote about this in my approach section, but I thought this was going to be an extremely straightforward migration, but I had to take into consideration whether or not the case that was not passing was intentionally an outlier or needed a special designation.
 
 ### What I'd Do Differently Next Time
 
-N/A
+I don't believe there is anything I would do significantly differently, since this was an issue that I thought was within my capabilities.
 
 ---
 
