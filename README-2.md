@@ -96,7 +96,7 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 
-- [ ] N/A; I am modifying the tests for a package.
+- [ ] N/A; I am modifying the tests for a package, so it was part of the implementation process to run tests.
 ### Integration Tests
 
 - [ ] N/A
