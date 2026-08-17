@@ -50,15 +50,14 @@ N/A; I followed the development guideline set by stdlib-js.
 
 ### Steps to Reproduce
 
-1. Run make test
-2. [Step 2]
-3. [Observed result]
+1. Run `make TESTS_FILTER=".*/math/base/special/kernel-betaincinv/.*" test`
+2. Ensure all tests pass.
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
-- **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **Commit showing reproduction:** [[Link to commit in your fork]](https://github.com/vvkwan/stdlib/tree/test-kernel-betaincinv-ulp)
+- **Screenshots/logs:** N/A
+- **My findings:** N/A
 
 ---
 
@@ -66,30 +65,30 @@ N/A; I followed the development guideline set by stdlib-js.
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+N/A
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+I looked at the code provided in the issue description, which assumed a default of 1 for the ULP bound; for the package I chose, the ULP bound needed to be increased until all tests passed. I found an example of previously merged in code that previously had a multiplier for EPS for relative tolerance testing. The migrated ULP difference testing had an increased ULP bound, so I knew that I needed to increase the ULP bound until the tests passed.
 
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** The testing in this package previously relied on relative tolerance testing.
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** Other contributors have already migrated many packages to ULP testing, so I am able to use those as references.
 
 **Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+1. Remove all references of abs and EPS in the test.js file.
+2. Replace it with the line specified in the issue description; `t.strictEqual( isAlmostSameValue( y, expected[ i ], 1 ), true, 'returns expected value' );`
+3. Ensure that the ULP bound is correct.
 
-**Implement:** [Link to your branch/commits as you work]
+**Implement:** [[Link to your branch/commits as you work]](https://github.com/vvkwan/stdlib/tree/test-kernel-betaincinv-ulp)
 
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
+**Review:** I followed the clear contributing instructions outlined in their [[CONTRIBUTING.md]](https://github.com/stdlib-js/stdlib/blob/develop/CONTRIBUTING.md). 
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** The tests pass, so I assume it worked.
 
 ---
 
@@ -97,18 +96,14 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
-
+- [ ] N/A; I am modifying the tests for a package.
 ### Integration Tests
 
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
+- [ ] N/A
 
 ### Manual Testing
 
-[What you tested manually and results]
+N/A
 
 ---
 
@@ -116,31 +111,78 @@ Using UMPIRE framework (adapted):
 
 ### Week [X] Progress
 
-[What you built this week, challenges faced, decisions made]
+N/A
 
 ### Week [Y] Progress
 
-[Continue documenting as you work]
+N/A
 
 ### Code Changes
 
 - **Files modified:** [List]
 - **Key commits:** [Links to important commits]
-- **Approach decisions:** [Why you chose certain approaches]
+- **Approach decisions:** I initially was confused on whether or not to significantly increase the ULP bound when it was only failing for one test, but I ran the previous code with a lower multiplier on EPS for relative testing and the only test that failed was that one, so I came to the conclusion that that was most likely a deliberate choice by the test creator.
 
 ---
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** [[GitHub PR URL when submitted]](https://github.com/stdlib-js/stdlib/pull/14349)
 
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
+**PR Description:** 
+
+Resolves a part of #11352 .
+
+Description
+What is the purpose of this pull request?
+
+This pull request:
+
+Migrates tests in math/base/special/kernel-betaincinv from relative tolerance testing to ULP difference testing.
+All fixtures pass when the ULP bound is 10 except for index 1818, which requires a ULP bound of 20; this fixture case also had the tightest margin under the previous 15.0 * EPS tolerance.
+Related Issues
+Does this pull request have any related issues?
+
+This pull request has the following related issues:
+
+[RFC]: Migrate math/base/special packages from relative tolerance testing to ULP difference testing (tracking issue) #11352
+Questions
+Any questions for reviewers of this pull request?
+
+No.
+
+Other
+Any other information relevant to this pull request? This may include screenshots, references, and/or implementation notes.
+
+No.
+
+Checklist
+Please ensure the following tasks are completed before submitting this pull request.
+
+ Read, understood, and followed the contributing guidelines.
+AI Assistance
+When authoring the changes proposed in this PR, did you use any kind of AI assistance?
+
+ Yes
+ No
+If you answered "yes" above, how did you use AI assistance?
+
+ Code generation (e.g., when writing an implementation or fixing a bug)
+ Test/benchmark generation
+ Documentation (including examples)
+ Research and understanding
+Disclosure
+If you answered "yes" to using AI assistance, please provide a short disclosure indicating how you used AI assistance. This helps reviewers determine how much scrutiny to apply when reviewing your contribution. Example disclosures: "This PR was written primarily by Claude Code." or "I consulted ChatGPT to understand the codebase, but the proposed changes were fully authored manually by myself.".
+
+I consulted AI to understand the codebase, specifically the purpose and migration approach of the issue and this package, but the proposed changes were authored by myself.
+
+@stdlib-js/reviewers
 
 **Maintainer Feedback:**
 - [Date]: [Summary of feedback received]
 - [Date]: [How you addressed it]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** [Awaiting review]
 
 ---
 
@@ -148,20 +190,18 @@ Using UMPIRE framework (adapted):
 
 ### Technical Skills Gained
 
-[What you learned technically]
+I learned about testing and the different considerations people have to make when adapting different packages to a change; thankfully, this issue had a lot of examples of the migration approach applied and I was able to look at a lot of them as reference.
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
+I wrote about this in my approach section, but I thought this was going to be an extremely straightforward migration, but I had to take into consideration.
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
+N/A
 
 ---
 
 ## Resources Used
 
-- [Link to helpful documentation]
-- [Tutorial or Stack Overflow post that helped]
-- [GitHub issues or discussions that helped]
+N/A
